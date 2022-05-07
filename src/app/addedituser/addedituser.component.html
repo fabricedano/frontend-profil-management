@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row bg-title">
+        <h1 class="title">Add / Edit an user</h1>
+    </div>
+    <div class="row">
+        <div class="row">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="col">
+                    <div class="row">
+                        <mat-form-field appearance="fill">
+                            <input matInput formControlName="name" placeholder="Enter a name">
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field appearance="fill">
+                            <input matInput formControlName="firstName" placeholder="Enter a firstname">
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field appearance="fill">
+                            <input matInput formControlName="email" placeholder="Enter a mail">
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Type user</mat-label>
+                            <mat-select formControlName="typeUser">
+                                <mat-option *ngFor="let type of typeUsersList$ | async" [value]="type.id">
+                                {{type.type}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <button mat-stroked-button class="btn-action addupadte"> {{  buttontext }} </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> 
+</div>

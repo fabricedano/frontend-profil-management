@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row bg-title">
+        <h1 class="title">Type user List</h1>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <button type="button" class="btn btn-primary btn-action" routerLink="/addtypeuser">Add a type user</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Type User</th>
+                            <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let typeuser of typesuser | async">
+                                <td>{{ typeuser.id }}</td>
+                                <td>{{ typeuser.type }}</td>
+                            <td>
+                                <button  class="btn btn-info btn-edit" [routerLink]="['/addtypeuser', typeuser.id]">Edit</button>
+                                <button  class="btn btn-danger btn-delete" (click)="onClick(typeuser)" style="margin-left: 10px">Delete</button>
+                            </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

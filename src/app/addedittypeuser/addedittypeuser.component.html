@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row bg-title">
+        <h1 class="title">Add / Edit a type user</h1>
+    </div>
+    <div class="row">
+        <div class="row">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="col">
+                    <div class="row">
+                        <mat-form-field appearance="fill">
+                            <input matInput formControlName="typeUser" placeholder="Enter a type user">
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <button mat-stroked-button class="btn-action addupadte"> {{  buttontext }} </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> 
+</div>
