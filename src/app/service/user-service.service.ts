@@ -36,17 +36,14 @@ export class UserServiceService {
   }
 
   updateTypeUser(id: number, newTypeUser): Observable<any> {
-    console.log(newTypeUser)
     return this.http.put(`${this.baseUrl}/typesuser/${id}`, newTypeUser);
   }
 
   addUser(newUser): Observable<any> {
-    console.log(newUser);
     return this.http.post(`${this.baseUrl}/users`, newUser);
   }
 
   addTypeUser(newTypeUser): Observable<any> {
-    console.log(newTypeUser);
     return this.http.post(`${this.baseUrl}/typesuser`, newTypeUser);
   }
 

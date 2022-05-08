@@ -26,7 +26,7 @@ export class AddedittypeuserComponent implements OnInit {
   ngOnInit(): void {
     
     this.form = new FormGroup({
-      typeUser : new FormControl('', Validators.required)
+      type : new FormControl('', Validators.required)
     })
 
     this.route.params.subscribe(params => {
@@ -35,7 +35,7 @@ export class AddedittypeuserComponent implements OnInit {
         this.service.getTypeUserById(id).subscribe(res => {
           this.currentTypeUser = res;
           this.form.patchValue({
-          typeUser:  res.type
+          type:  res.type
         })
       })
       }
@@ -56,10 +56,10 @@ export class AddedittypeuserComponent implements OnInit {
         this.service?.addTypeUser( 
           {
             ...valueToSend,
+            id: Math.floor((Math.random() * 100) + 1),
           }
           ).subscribe();
       }
-      console.log(valueToSend);
     }
   }
 

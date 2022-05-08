@@ -70,7 +70,6 @@ export class AddedituserComponent implements OnInit {
           }
           ).subscribe();
       }
-      console.log(valueToSend);
     }
   }
 
